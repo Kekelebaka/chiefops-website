@@ -1,0 +1,34 @@
+name = "chiefops-payslip-generator"
+main = "index.ts"
+compatibility_date = "2024-01-01"
+account_id = "c63d3d6d8c17db7487ab40b81d5e29d1"
+
+[vars]
+# In production, set these via wrangler secret or dashboard
+# EMAIL_API_TOKEN = "your-email-api-token"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "chiefops-db"
+database_id = "1f2ff1da-1f52-4229-a8f8-8379b37f2b60"
+
+# R2 Bucket binding for storing generated payslips
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "chiefops-payslips"
+
+# KV Namespace for caching
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "YOUR_KV_ID"
+
+# Queue for batch processing
+# [[queues.consumers]]
+#   queue = "payslip-processing"
+#   max_batch_size = 100
+#   max_batch_timeout = 300
+
+# Trigger for scheduled batch generation (runs on the 25th of each month)
+# [triggers]
+# crons = ["0 0 25 * *"]
