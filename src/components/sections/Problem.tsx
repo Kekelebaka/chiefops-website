@@ -1,103 +1,44 @@
-'use client';
-
-import { useState } from 'react';
-
 export function Problem() {
-  const [activeTab, setActiveTab] = useState('visibility');
-
   const problems = [
-    {
-      id: 'visibility',
-      title: 'Invisible to Customers',
-      description: 'Your business exists, but customers can\'t find you online. No website means no digital footprint.',
-      icon: '👀',
-    },
-    {
-      id: 'conversion',
-      title: 'No Lead Conversion',
-      description: 'You get visitors, but they don\'t become leads. Your website isn\'t optimized for conversions.',
-      icon: '🎯',
-    },
-    {
-      id: 'automation',
-      title: 'Manual Processes',
-      description: 'Spending hours on repetitive tasks that could be automated. Time is money, and you\'re wasting both.',
-      icon: '⚙️',
-    },
-    {
-      id: 'retention',
-      title: 'Client Retention',
-      description: 'Getting clients is hard, keeping them is harder. No system to nurture relationships and encourage repeat business.',
-      icon: '🤝',
-    },
+    { title: 'Invisible online', desc: 'No one can find you or takes you seriously.' },
+    { title: 'Leads slip away', desc: 'Leads come in but nobody follows up.' },
+    { title: 'Drowning in admin', desc: 'Quotes, invoices, reminders — all manual.' },
+    { title: 'Amateur documents', desc: 'Scrappy quotes undercut your pricing and brand.' },
+    { title: 'No client or staff system', desc: 'Information scattered across chats and files.' },
+    { title: 'AI feels out of reach', desc: 'Doing slowly what AI could do in seconds.' },
   ];
 
-  const activeProblem = problems.find(p => p.id === activeTab);
-
   return (
-    <section className="py-20 bg-white">
+    <section className="section-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="inline-block px-4 py-1 bg-primary-orange text-white text-sm font-semibold rounded-full mb-4">
-            THE PROBLEM
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
-            The Hidden Costs of {' '}
-            <span className="text-primary-orange">Not Having a System</span>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <p className="eyebrow mb-3">THE PROBLEM</p>
+          <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6">
+            Most businesses run on chaos, not systems.
           </h2>
+          <p className="text-lg text-charcoal/70 leading-relaxed">
+            Your website sits in one place. Quotes live in another. Invoices are scattered,
+            client info is everywhere, staff documents are a mess — and leads come in but
+            nobody follows up. You look busy. The system behind you is weak.
+          </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Problem Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {problems.map((problem) => (
-              <button
-                key={problem.id}
-                onClick={() => setActiveTab(problem.id)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                  activeTab === problem.id
-                    ? 'bg-primary-orange text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                <span className="mr-2">{problem.icon}</span>
-                {problem.title}
-              </button>
-            ))}
-          </div>
-
-          {/* Active Problem Display */}
-          {activeProblem && (
-            <div className="bg-gradient-to-r from-primary-navy to-primary-orange p-1 rounded-2xl shadow-xl">
-              <div className="bg-white p-8 rounded-2xl">
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl">{activeProblem.icon}</div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      {activeProblem.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {activeProblem.description}
-                    </p>
-                    <div className="mt-4">
-                      <span className="inline-block px-3 py-1 bg-primary-teal/10 text-primary-teal text-sm font-medium rounded-full">
-                        AI Can Solve This
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {problems.map((p) => (
+            <div
+              key={p.title}
+              className="card relative rounded-xl border border-line bg-white p-6 transition-all duration-200 hover:border-orange/30 hover:shadow-lg hover:shadow-orange/5"
+            >
+              <h3 className="font-display font-bold text-lg mb-2">{p.title}</h3>
+              <p className="text-sm text-muted">{p.desc}</p>
             </div>
-          )}
-
-          <div className="mt-8 text-center">
-            <p className="text-gray-600 text-lg">
-              These problems compound over time, costing you {' '}
-              <span className="font-bold text-primary-navy">thousands in lost revenue</span>. 
-              The solution? A system that works for you 24/7.
-            </p>
-          </div>
+          ))}
         </div>
+
+        <p className="text-center text-charcoal/70 font-medium">
+          These don&apos;t stay still — they compound, quietly costing you clients and hours
+          every month. ChiefOps fixes the system.
+        </p>
       </div>
     </section>
   );
