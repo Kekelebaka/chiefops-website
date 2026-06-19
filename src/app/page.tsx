@@ -8,9 +8,9 @@ import { AIReady } from '@/components/sections/AIReady';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 
 export const metadata = {
-  title: 'ChiefOps | AI-Powered Business Operating Systems',
+  title: 'ChiefOps — Business Operating Systems for South African Businesses',
   description:
-    'ChiefOps builds AI-ready websites, sales funnels, client portals, automations and branded documents that make South African businesses look professional, sell faster, and run with control.',
+    'ChiefOps builds AI-ready websites, sales funnels, client portals and automations for SA businesses. Start with a free ChiefOps audit.',
   alternates: {
     canonical: 'https://chiefops.co.za',
   },

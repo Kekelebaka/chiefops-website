@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Command bracket motif -->
+  <rect width="64" height="64" fill="none"/>
+  <!-- Top-left bracket -->
+  <path d="M8 20 L8 8 L20 8" fill="none" stroke="#F7811E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bottom-right bracket -->
+  <path d="M44 56 L56 56 L56 44" fill="none" stroke="#F7811E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Reticle circle -->
+  <circle cx="32" cy="32" r="12" fill="none" stroke="#232323" stroke-width="2"/>
+  <circle cx="32" cy="32" r="4" fill="#F7811E"/>
+  <!-- Reticle crosshairs -->
+  <line x1="20" y1="32" x2="26" y2="32" stroke="#232323" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="38" y1="32" x2="44" y2="32" stroke="#232323" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="32" y1="20" x2="32" y2="26" stroke="#232323" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="32" y1="38" x2="32" y2="44" stroke="#232323" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

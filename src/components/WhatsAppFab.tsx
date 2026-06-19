@@ -4,7 +4,7 @@
  * WhatsApp Floating Action Button — site-wide.
  * Replace WHATSAPP_NUMBER with your real number (e.g. 27821234567).
  */
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27000000000';
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27761966009';
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi ChiefOps, I'd like a business audit."
 );

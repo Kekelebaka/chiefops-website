@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 
-const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27000000000';
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27761966009';
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi ChiefOps, I'd like a business audit."
 );

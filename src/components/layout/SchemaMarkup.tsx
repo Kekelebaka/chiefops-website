@@ -3,7 +3,8 @@
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 
-const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27000000000';
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27761966009';
+const PHONE_DISPLAY = process.env.NEXT_PUBLIC_PHONE_DISPLAY || '+27 76 196 6009';
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@chiefops.co.za';
 const SITE_URL = 'https://chiefops.co.za';
 
@@ -14,7 +15,7 @@ const serviceSchema = {
     '@type': 'Organization',
     name: 'ChiefOps',
     url: SITE_URL,
-    telephone: PHONE_NUMBER,
+    telephone: `+${PHONE_NUMBER}`,
     email: CONTACT_EMAIL,
     address: {
       '@type': 'PostalAddress',

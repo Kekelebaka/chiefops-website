@@ -9,7 +9,7 @@ export const metadata = {
   },
 };
 
-const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27000000000';
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27761966009';
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@chiefops.co.za';
 
 export default function ContactPage() {

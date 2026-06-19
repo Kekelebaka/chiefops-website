@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'ChiefOps Solutions — Six Systems to Run Your Business on',
+  title: 'Solutions — Get More Clients, Automate Admin, Add AI | ChiefOps',
   description:
-    'Six systems. Switch on what your business needs now — add the rest as you grow.',
+    'ChiefOps solutions by business pain: more clients, professional presence, admin automation, client/staff portals, documents and AI — built for SA SMEs.',
   alternates: {
     canonical: 'https://chiefops.co.za/solutions',
   },

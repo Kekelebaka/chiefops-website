@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27761966009';
+const WHATSAPP_MESSAGE = encodeURIComponent("Hi ChiefOps, I'd like a business audit.");
+
 export default function NotFound() {
   return (
     <div className="section-dark min-h-[60vh] flex items-center justify-center">
@@ -20,7 +23,7 @@ export default function NotFound() {
             Get an Audit
           </Link>
           <a
-            href="https://wa.me/27000000000"
+            href={`https://wa.me/${PHONE_NUMBER}?text=${WHATSAPP_MESSAGE}`}
             target="_blank"
             rel="noopener noreferrer"
             className="cta-outline"

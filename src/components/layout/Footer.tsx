@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 
-const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27000000000';
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27761966009';
+const PHONE_DISPLAY = process.env.NEXT_PUBLIC_PHONE_DISPLAY || '+27 76 196 6009';
 const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@chiefops.co.za';
 
 const MAIN_LINKS = [
@@ -64,7 +65,7 @@ export function Footer() {
             </p>
             <div className="mt-4 space-y-1 text-sm text-muted">
               <p>Email: <a href={`mailto:${CONTACT_EMAIL}`} className="text-offwhite hover:text-orange transition-colors">{CONTACT_EMAIL}</a></p>
-              <p>WhatsApp: <a href={`https://wa.me/${PHONE_NUMBER}`} target="_blank" rel="noopener noreferrer" className="text-offwhite hover:text-orange transition-colors">{PHONE_NUMBER}</a></p>
+              <p>WhatsApp: <a href={`https://wa.me/${PHONE_NUMBER}`} target="_blank" rel="noopener noreferrer" className="text-offwhite hover:text-orange transition-colors">{PHONE_DISPLAY}</a></p>
             </div>
           </div>
 

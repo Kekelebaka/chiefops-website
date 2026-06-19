@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { AstronautMascot } from '@/components/AstronautMascot';
 
-const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27000000000';
+const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27761966009';
 
 export function Hero() {
   return (

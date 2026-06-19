@@ -79,8 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${sora.variable} ${inter.variable} ${jetBrainsMono.variable}`}>
       <head>
         <SchemaMarkup />
-        <link rel="icon" href="/logo-chiefops.png" type="image/png" />
-        <link rel="alternate icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/chiefops-mark.svg" type="image/svg+xml" />
         <meta name="theme-color" content="#F7811E" />
         <meta name="msapplication-TileColor" content="#F7811E" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

@@ -4,11 +4,6 @@ const caseStudies = [
     desc: 'Parent portal, fee tracking, registration forms and payslips in one system.',
     tag: 'Operating Solution',
   },
-  {
-    title: 'TODO(chief): add proof',
-    desc: 'Placeholder for your first real case study.',
-    tag: 'TBD',
-  },
 ];
 
 export function Proof() {
