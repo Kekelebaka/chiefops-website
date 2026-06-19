@@ -89,57 +89,52 @@ Value: route2.mx.cloudflare.net
 
 ### 6. Deploy Next.js to Cloudflare Pages
 
-#### Option A: Using GitHub (Recommended)
+### ✅ DEPLOYMENT READY
 
-1. **Create GitHub Repository**
-   ```bash
-   cd chiefops-website
-   git init
-   git add .
-   git commit -m "Initial commit - ChiefOps Website"
-   git remote add origin git@github.com:your-username/chiefops-website.git
-   git push -u origin main
+Your site is now deployed to GitHub:
+- **Repository**: https://github.com/Kekelebaka/chiefops-website
+- **Branch**: main
+- **Commit**: 0ff1848
+
+### Cloudflare Pages Setup
+
+1. **Go to Cloudflare Pages**: https://dash.cloudflare.com/c63d3d6d8c17db7487ab40b81d5e29d1/pages
+2. **Click "Create a project"**
+3. **Select "Connect to Git"**
+4. **Choose the repository**: `Kekelebaka/chiefops-website`
+5. **Configure the build settings**:
    ```
-
-2. **Connect to Cloudflare Pages**
-   - Go to: https://dash.cloudflare.com/c63d3d6d8c17db7487ab40b81d5e29d1/pages
-   - Click "Connect GitHub account"
-   - Select the repository: chiefops-website
-   - Configure build settings:
-     ```
-     Project name: chiefops-website
-     Production branch: main
-     Build command: npm run build
-     Build output directory: out
-     Root directory: (leave empty)
-     ```
-
-3. **Add Environment Variables**
-   ```bash
-   NEXT_PUBLIC_SITE_URL=https://chiefops.co.za
+   Project name: chiefops-website
+   Production branch: main
+   Build command: npm run build
+   Build output directory: out
+   Root directory: (leave empty)
+   Environment variables:
+   - NEXT_PUBLIC_SITE_URL=https://chiefops.co.za
    ```
+6. **Click "Save and Deploy"**
+7. **Wait for the build to complete** (2-5 minutes)
 
-4. **Deploy**
-   - Click "Deploy"
-   - Wait for build to complete (2-5 minutes)
+### Post-Deployment Steps
 
-#### Option B: Direct Upload (Temporary)
+1. **Add Custom Domain**:
+   - Go to your Pages project
+   - Click "Custom domains"
+   - Add: `chiefops.co.za`
+   - Follow the verification steps
 
-1. Install dependencies:
-   ```bash
-   cd chiefops-website
-   npm install
-   ```
+2. **Verify the site is working**:
+   - Check the deployment logs in Cloudflare Pages
+   - Visit https://chiefops-website.pages.dev (or your custom domain)
+   - Test all pages: Home, Audit, Solutions
 
-2. Build for Cloudflare Pages:
-   ```bash
-   npm run build
-   ```
+### Troubleshooting
 
-3. Upload to Cloudflare Pages via Dashboard:
-   - Go to Pages
-   - Click "Create project" → "Direct upload"
-   - Upload the `out/` directory
+If the build fails:
+1. Check the build logs in Cloudflare Pages
+2. Ensure all dependencies are in package.json
+3. Verify the build command is correct: `npm run build`
+4. Check that the output directory is `out`
 
 ---
 
@@ -168,13 +163,13 @@ Value: route2.mx.cloudflare.net
 
 ## 📋 DEPLOYMENT SUMMARY
 
-### ✅ COMPLETED (4/5)
+### ✅ COMPLETED (5/6)
 1. ✅ Cloudflare account authenticated
 2. ✅ D1 database created with schema
 3. ✅ R2 buckets created
 4. ✅ Workers deployed and running
-5. ⏳ Email Routing (pending DNS verification)
-6. ⏳ Next.js site (pending GitHub setup)
+5. ✅ Next.js site built and pushed to GitHub
+6. ⏳ Cloudflare Pages deployment (ready to configure)
 
 ### 🔗 DEPLOYED RESOURCES
 
@@ -185,24 +180,28 @@ Value: route2.mx.cloudflare.net
 | D1 Database | chiefops-db (1f2ff1da...) | ✅ Ready |
 | R2 Assets | chiefops-assets | ✅ Ready |
 | R2 Payslips | chiefops-payslips | ✅ Ready |
+| GitHub Repo | https://github.com/Kekelebaka/chiefops-website | ✅ Ready |
+| Production Build | out/ directory | ✅ Ready |
 
 ### 💡 NEXT STEPS
 
-1. **Complete Email Routing** (5 minutes)
+1. **Deploy to Cloudflare Pages** (5 minutes)
+   - Go to Cloudflare Pages dashboard
+   - Connect GitHub repository: Kekelebaka/chiefops-website
+   - Configure build settings (see DEPLOYMENT-GUIDE.md)
+   - Deploy and wait for build
+
+2. **Configure Custom Domain** (10 minutes)
+   - Add chiefops.co.za to Pages project
+   - Update DNS records for domain verification
+   - Test site at chiefops.co.za
+
+3. **Complete Email Routing** (5 minutes)
    - Add domain in Cloudflare Dashboard
    - Create routes for info@ and support@
+   - Test email processing
 
-2. **Deploy Next.js Site** (10 minutes)
-   - Push to GitHub
-   - Connect to Cloudflare Pages
-   - Configure build settings
-
-3. **Test Everything** (15 minutes)
-   - Site navigation
-   - Form submissions
-   - Email processing
-
-**Estimated Time to Complete: 30-40 minutes**
+**Estimated Time to Complete: 20-25 minutes**
 
 ---
 
