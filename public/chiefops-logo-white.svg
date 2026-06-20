@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 84" width="384" height="84" fill="none" role="img" aria-label="ChiefOps — AI-Powered Operations Hub">
+  <!-- mark -->
+  <g transform="translate(2,10)">
+    <path d="M7 21 V9 a2 2 0 0 1 2-2 H21" stroke="#F7811E" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M57 43 V55 a2 2 0 0 1-2 2 H43" stroke="#F7811E" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="32" cy="32" r="13" stroke="#ECEDEF" stroke-width="3.4"/>
+    <path d="M32 12.5 V18.5 M32 45.5 V51.5 M12.5 32 H18.5 M45.5 32 H51.5" stroke="#ECEDEF" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="32" cy="32" r="4.6" fill="#F7811E"/>
+  </g>
+  <!-- wordmark (Sora must be loaded by the host page) -->
+  <text x="86" y="46" font-family="Sora, 'Arial Black', sans-serif" font-weight="800" font-size="38" letter-spacing="-1">
+    <tspan fill="#ECEDEF">CHIEF</tspan><tspan fill="#F7811E">OPS</tspan>
+  </text>
+  <text x="88" y="68" font-family="'JetBrains Mono', monospace" font-weight="500" font-size="10.5" letter-spacing="3.4" fill="#9A9DA6">AI-POWERED OPERATIONS HUB</text>
+</svg>

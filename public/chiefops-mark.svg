@@ -1,17 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Command bracket motif -->
-  <rect width="64" height="64" fill="none"/>
-  <!-- Top-left bracket -->
-  <path d="M8 20 L8 8 L20 8" fill="none" stroke="#F7811E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Bottom-right bracket -->
-  <path d="M44 56 L56 56 L56 44" fill="none" stroke="#F7811E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Reticle circle -->
-  <circle cx="32" cy="32" r="12" fill="none" stroke="#232323" stroke-width="2"/>
-  <circle cx="32" cy="32" r="4" fill="#F7811E"/>
-  <!-- Reticle crosshairs -->
-  <line x1="20" y1="32" x2="26" y2="32" stroke="#232323" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="38" y1="32" x2="44" y2="32" stroke="#232323" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="32" y1="20" x2="32" y2="26" stroke="#232323" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="32" y1="38" x2="32" y2="44" stroke="#232323" stroke-width="1.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" role="img" aria-label="ChiefOps mark">
+  <!-- command corner brackets -->
+  <path d="M7 21 V9 a2 2 0 0 1 2-2 H21" stroke="#F7811E" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M57 43 V55 a2 2 0 0 1-2 2 H43" stroke="#F7811E" stroke-width="3.4" stroke-linecap="round"/>
+  <!-- reticle ring -->
+  <circle cx="32" cy="32" r="13" stroke="#ECEDEF" stroke-width="3.4"/>
+  <!-- crosshair ticks -->
+  <path d="M32 12.5 V18.5 M32 45.5 V51.5 M12.5 32 H18.5 M45.5 32 H51.5" stroke="#ECEDEF" stroke-width="3.4" stroke-linecap="round"/>
+  <!-- core -->
+  <circle cx="32" cy="32" r="4.6" fill="#F7811E"/>
 </svg>

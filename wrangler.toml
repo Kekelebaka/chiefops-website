@@ -1,33 +1,12 @@
-# ChiefOps Website - Cloudflare Configuration
-# This file configures the Cloudflare Workers for the project
+name = "chiefops-website"
+pages_build_output_dir = "out"
 
-# To deploy workers:
-# cd workers/email-inbound && wrangler deploy
-# cd workers/payslip-generator && wrangler deploy
+[vars]
+NEXT_PUBLIC_WHATSAPP_NUMBER = "27761966009"
+NEXT_PUBLIC_PHONE_DISPLAY = "+27 76 196 6009"
+NEXT_PUBLIC_CONTACT_EMAIL = "info@chiefops.co.za"
+NEXT_PUBLIC_SITE_URL = "https://chiefops.co.za"
 
-# For local development:
-# cd workers/email-inbound && wrangler dev
-# cd workers/payslip-generator && wrangler dev
-
-# Global settings (applies to all workers)
-compatibility_date = "2024-01-01"
-
-# D1 Database configuration (shared across workers)
-# Create with: wrangler d1 create chiefops-db
-# Then configure in each worker's wrangler.toml
-
-# R2 Buckets
-# Create with: wrangler r2 bucket create chiefops-assets
-# Create with: wrangler r2 bucket create chiefops-payslips
-
-# Email Routing configuration
-# Set up in Cloudflare Dashboard:
-# 1. Add domain: chiefops.co.za
-# 2. Add routes:
-#    - info@chiefops.co.za -> Forward to email-inbound worker
-#    - support@chiefops.co.za -> Forward to admin email
-#    - payroll@chiefops.co.za -> Forward to payslip-generator worker (optional)
-
-# Workers configuration - deploy each worker independently:
-#   cd src/workers/email-inbound && wrangler deploy
-#   cd src/workers/payslip-generator && wrangler deploy
+# Try to add domain configuration here
+[pages]
+domain = "www.chiefops.co.za"

@@ -4,6 +4,12 @@ import { useState, FormEvent } from 'react';
 
 const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '';
 
+// Guard: if no access key is configured, show a clear error instead of failing silently
+if (!ACCESS_KEY) {
+  // This renders on the client and tells users the form is not configured
+  console.warn('ChiefOps: NEXT_PUBLIC_WEB3FORMS_KEY is not set. Form submissions will fail.');
+}
+
 export default function AuditForm() {
   const [form, setForm] = useState({
     businessName: { value: '', error: '' },
@@ -45,6 +51,13 @@ export default function AuditForm() {
 
     setStatus('submitting');
     setErrorMsg('');
+
+    // Check if access key is configured
+    if (!ACCESS_KEY) {
+      setStatus('error');
+      setErrorMsg('Form not configured. Please WhatsApp us instead.');
+      return;
+    }
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {

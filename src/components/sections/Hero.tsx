@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { AstronautMascot } from '@/components/AstronautMascot';
+import Image from 'next/image';
 
 const PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '27761966009';
 
@@ -62,9 +62,16 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Mascot */}
-          <div className="hidden lg:flex justify-center">
-            <AstronautMascot />
+          {/* Hero Image - Astronaut Command Centre */}
+          <div className="relative hidden lg:block">
+            <Image
+              src="/hero-astronaut.png"
+              alt="ChiefOps astronaut operating a business command centre"
+              width={1456}
+              height={816}
+              priority
+              className="rounded-2xl border border-line w-full h-auto"
+            />
           </div>
         </div>
       </div>
