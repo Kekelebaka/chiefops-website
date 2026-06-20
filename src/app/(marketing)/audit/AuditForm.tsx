@@ -2,13 +2,8 @@
 
 import { useState, FormEvent } from 'react';
 
-const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '';
-
-// Guard: if no access key is configured, show a clear error instead of failing silently
-if (!ACCESS_KEY) {
-  // This renders on the client and tells users the form is not configured
-  console.warn('ChiefOps: NEXT_PUBLIC_WEB3FORMS_KEY is not set. Form submissions will fail.');
-}
+const STATICFORMS_KEY = 'sf_a081d889bc563943b3557aff';
+const STATICFORMS_ENDPOINT = 'https://api.staticforms.dev/submit';
 
 export default function AuditForm() {
   const [form, setForm] = useState({
@@ -52,30 +47,22 @@ export default function AuditForm() {
     setStatus('submitting');
     setErrorMsg('');
 
-    // Check if access key is configured
-    if (!ACCESS_KEY) {
-      setStatus('error');
-      setErrorMsg('Form not configured. Please WhatsApp us instead.');
-      return;
-    }
-
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(STATICFORMS_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: ACCESS_KEY,
+          accessKey: STATICFORMS_KEY,
           subject: `New ChiefOps Audit — ${form.businessName.value}`,
-          from_name: 'ChiefOps Audit Form',
-          business_name: form.businessName.value,
+          fromName: 'ChiefOps Audit Form',
+          businessName: form.businessName.value,
           email: form.email.value,
           phone: form.phone.value,
           industry: form.industry.value,
-          website_url: form.websiteUrl.value,
-          biggest_pain_point: form.biggestPainPoint.value,
-          revenue_range: form.revenueRange.value,
-          heard_about_us: form.heardAboutUs.value,
-          source: 'chiefops-website',
+          websiteUrl: form.websiteUrl.value,
+          biggestPainPoint: form.biggestPainPoint.value,
+          revenueRange: form.revenueRange.value,
+          heardAboutUs: form.heardAboutUs.value,
         }),
       });
 

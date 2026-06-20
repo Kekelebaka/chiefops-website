@@ -35,7 +35,7 @@ export default function PrivacyPage() {
           <h2 className="font-display font-bold text-xl">Data Sharing</h2>
           <p>
             We may share your information with third-party service providers (such as
-            Web3Forms for form submissions) solely to deliver our services. We do not sell
+            Static Forms for form submissions) solely to deliver our services. We do not sell
             your personal information.
           </p>
 
