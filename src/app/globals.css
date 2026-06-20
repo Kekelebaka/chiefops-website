@@ -2,74 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
+/* ---- Brand CI: Design Tokens ---- */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --font-sora: 'Sora', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono', monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 10, 10, 10;
-    --background-end-rgb: 10, 10, 10;
-  }
+/* ---- Base ---- */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply font-body text-charcoal bg-white antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* ---- Bracket Motif ---- */
+.bracket::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid #F7811E;
+  border-left: 3px solid #F7811E;
+  border-radius: 2px 0 0 0;
 }
 
-/* Custom animations for RobotMascot */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-  25% {
-    transform: translateY(-10px) translateX(5px);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-5px) translateX(-5px);
-    opacity: 0.6;
-  }
-  75% {
-    transform: translateY(-15px) translateX(3px);
-    opacity: 0.4;
-  }
+.bracket::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 3px solid #F7811E;
+  border-right: 3px solid #F7811E;
+  border-radius: 0 0 2px 0;
 }
 
-.animate-float {
-  animation: float 2s ease-in-out infinite;
-}
-
-.animation-delay-500 {
-  animation-delay: 0.5s;
-}
-
-.animation-delay-1000 {
-  animation-delay: 1s;
-}
-
-/* Gradient text utility */
-.bg-gradient-text {
-  background: linear-gradient(45deg, #FF6B35, #4ECDC4);
+/* ---- Gradient text utility ---- */
+.gradient-text {
+  background: linear-gradient(135deg, #F7811E, #FF9A42);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ---- Eyebrow / label style ---- */
+.eyebrow {
+  @apply font-mono text-orange text-xs font-bold uppercase tracking-[0.2em];
+}
+
+/* ---- Card base ---- */
+.card {
+  @apply relative rounded-xl border border-line bg-white dark:bg-panel p-6 transition-all duration-200;
+}
+
+.card:hover {
+  @apply border-orange/30 shadow-lg shadow-orange/5;
+}
+
+/* ---- Section base ---- */
+.section {
+  @apply py-20 lg:py-28;
+}
+
+.section-dark {
+  @apply section bg-ink text-offwhite;
+}
+
+.section-light {
+  @apply section bg-white text-charcoal;
+}
+
+/* ---- CTA button (reusable anchor style) ---- */
+.cta-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-orange px-6 py-3 text-sm font-bold text-white
+         transition-all duration-200 hover:bg-orange-soft hover:shadow-lg hover:shadow-orange/20
+         focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2;
+}
+
+.cta-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-orange px-6 py-3 text-sm font-bold text-orange
+         transition-all duration-200 hover:bg-orange/10
+         focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2;
+}
+
+.cta-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line px-6 py-3 text-sm font-bold text-offwhite
+         transition-all duration-200 hover:border-orange/50 hover:text-orange
+         focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2;
+}
+
+/* ---- Trust strip ---- */
+.trust-strip {
+  @apply flex flex-wrap items-center gap-4 text-xs text-muted font-mono;
+}
+
+.trust-item {
+  @apply flex items-center gap-1.5;
+}
+
+.trust-dot {
+  @apply h-1.5 w-1.5 rounded-full bg-orange;
+}
+
+/* ---- Animations ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* ---- Smooth scroll offset for fixed header ---- */
+.scroll-mt-16 {
+  scroll-margin-top: 64px;
+}
+
+/* ---- Print styles ---- */
+@media print {
+  body { @apply text-black bg-white; }
+  .no-print { display: none; }
 }
